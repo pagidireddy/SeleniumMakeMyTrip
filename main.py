@@ -24,7 +24,7 @@ class MakeMyTripBusSearch(unittest.TestCase):
         self.driver = webdriver.Chrome(options=options)
         tracemalloc.start()
 
-    def test_open_site(self):
+    def test_opan_site_check_buses(self):
         driver = self.driver
         driver.maximize_window()
         driver.get("https://www.makemytrip.com")
@@ -118,7 +118,7 @@ class MakeMyTripBusSearch(unittest.TestCase):
         print(f'{len(bus_list)} Buses found')
 
     def tearDown(self):
-        # self.driver.quit()
+        self.driver.quit()
         warnings.filterwarnings("ignore", category=ResourceWarning)
 
 
